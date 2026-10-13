@@ -21,6 +21,7 @@ import {
 import { profile, skills, projects } from "./data";
 
 const sections = ["About", "Skills", "Projects", "Contact"];
+const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(profile.email)}`;
 
 function IconLink({ href, children, label }) {
   return (
@@ -91,7 +92,9 @@ function App() {
           </div>
 
           <a
-            href={"mailto:" + profile.email}
+            href={gmailComposeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden md:inline-flex btn-outline text-sm"
           >
             Let's talk <ArrowUpRight size={15} />
@@ -166,7 +169,7 @@ function App() {
                   <Linkedin size={19} />
                 </IconLink>
 
-                <IconLink href={"mailto:" + profile.email} label="Email">
+                <IconLink href={gmailComposeUrl} label="Email">
                   <Mail size={19} />
                 </IconLink>
 
@@ -465,7 +468,9 @@ function App() {
                 </p>
 
                 <a
-                  href={"mailto:" + profile.email}
+                  href={gmailComposeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn-primary mt-9"
                 >
                   Say hello <ArrowUpRight size={17} />
@@ -479,7 +484,9 @@ function App() {
 
                 <a
                   className="mt-5 block break-all text-xl text-white hover:text-cyan"
-                  href={"mailto:" + profile.email}
+                  href={gmailComposeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   {profile.email}
                 </a>
@@ -502,8 +509,7 @@ function App() {
       <footer className="border-t border-white/10">
         <div className="container-main flex flex-wrap items-center justify-between gap-4 py-8 text-sm text-slate-500">
           <span>
-            © {new Date().getFullYear()} {profile.name}. Built with React &
-            Tailwind.
+            © {new Date().getFullYear()} {profile.name}.
           </span>
 
           <a href="#home" className="hover:text-cyan">
