@@ -33,7 +33,7 @@ export const skills = [
   },
   {
     group: "Tools & Cloud",
-    items: ["Git", "GitHub", "AWS", "Docker", "Postman"],
+    items: ["Git", "GitHub", "AWS", "Docker", "Postman", "Zabbix"],
   },
 ];
 
